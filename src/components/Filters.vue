@@ -22,6 +22,9 @@
                 document.querySelector('input[id="min"]').value = ''
                 document.querySelector('input[id="max"]').value = ''
                 this.filters.forEach((v) => {
+                    if(v.id == 'min' || v.id == 'max')
+                        document.querySelector('input[id=' + v.id + ']').value = v.value
+                    else
                     document.querySelector('input[id=' + v.id + ']').checked = true                   
                 })
             },
